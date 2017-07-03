@@ -28,7 +28,7 @@ public class TestSetup {
             case "headless":
                 this.driver = initChromeDriverHeadLess(appURL);
             default:
-                driver = initChromeDriver(appURL);
+                driver = initChromeDriverHeadLess(appURL);
         }
     }
 
