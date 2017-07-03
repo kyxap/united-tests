@@ -5,7 +5,8 @@
     <parameter name="browserType" value="chrome"/>
     <test name="Smoke Test" >
         <classes>
-            <class name="SearchFlightsTest" />
+            <!--<class name="SearchFlightsTest" />-->
+            <class name="BaseTest"/>
         </classes>
     </test>
 </suite>
