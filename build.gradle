@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    // add the dependencies as needed
+    testCompile group: 'org.testng', name: 'testng', version:'6.8.8'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.+'
+
+}
+test {
+    useTestNG() {
+        // runlist to executed. path is relative to current folder
+        suites 'testing.xml'
+    }
+}
