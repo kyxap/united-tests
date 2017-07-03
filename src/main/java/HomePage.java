@@ -40,7 +40,7 @@ public class HomePage {
 
     public String getPageTitle(){
         String title = driver.getTitle();
-        System.out.println(">>>>>"+title);
+//        System.out.println(">>>>>"+title);
         return title;
     }
 
