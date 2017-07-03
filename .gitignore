@@ -1,0 +1,9 @@
+
+# idea and test stuff #
+*.idea*
+*.iml
+*.gradle*
+out/*
+build
+.DS_Store
+.keep
