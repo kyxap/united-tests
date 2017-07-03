@@ -27,6 +27,7 @@ public class TestSetup {
                 break;
             case "headless":
                 this.driver = initChromeDriverHeadLess(appURL);
+                break;
             default:
                 driver = initChromeDriverHeadLess(appURL);
         }
@@ -38,8 +39,7 @@ public class TestSetup {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
         options.addArguments("window-size=1200x600");
-
-        System.out.print(">>>");this.driver = new ChromeDriver(options);
+        this.driver = new ChromeDriver(options);
         //defConfiguration(driver);
         driver.navigate().to(appURL);
         return driver;
