@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'idea'
 
 repositories {
     mavenCentral()
@@ -7,6 +8,8 @@ dependencies {
     // add the dependencies as needed
     testCompile group: 'org.testng', name: 'testng', version:'6.8.8'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.+'
+    testCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.49.0'
+
 
 }
 test {

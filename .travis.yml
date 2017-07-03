@@ -10,7 +10,9 @@ branches:
 
 sudo: required
 dist: trusty
+
 addons:
+firefox: "44.0"
   apt:
     sources:
       - google-chrome

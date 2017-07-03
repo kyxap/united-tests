@@ -25,25 +25,33 @@ public class TestSetup {
             case "firefox":
                 driver = initFirefoxDriver(appURL);
                 break;
-            case "headless":
+            case "headlessChrome":
                 driver = initChromeDriverHeadLess(appURL);
+                break;
+            case "headlessFf":
+                driver = initFirefixHeadless(appURL);
                 break;
             default:
                 driver = initChromeDriverHeadLess(appURL);
         }
     }
 
+    private WebDriver initFirefixHeadless(String appURL) {
+        System.out.println("Start Firefox in Headless");
+        this.driver = new FirefoxDriver();
+        driver.navigate().to(appURL);
+        return driver;
+    }
+
     private WebDriver initChromeDriverHeadLess(String appURL) {
         System.out.println("Start Chrome in Headless");
-
-//        System.setProperty("webdriver.chrome.driver", driverPath
-//                + "chromedriver");
+        System.setProperty("webdriver.chrome.driver", driverPath
+                + "chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.setBinary("/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome");
         options.addArguments("headless");
         options.addArguments("window-size=1200x600");
         this.driver = new ChromeDriver(options);
-        //driver.navigate().to(appURL);
+        driver.navigate().to(appURL);
         return driver;
     }
 
