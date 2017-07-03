@@ -14,7 +14,7 @@ before_install:
 dist: trusty
 addons:
   chrome: stable
-  firefox: stable
+  firefox: "49.0"
 
 script: gradle test
 
