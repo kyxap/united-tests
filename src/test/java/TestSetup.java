@@ -31,9 +31,25 @@ public class TestSetup {
             case "headlessFf":
                 driver = initFirefixHeadless(appURL);
                 break;
+            case "travisChrome":
+                driver = initChromeTravis(appURL);
+                break;
             default:
                 driver = initChromeDriverHeadLess(appURL);
         }
+    }
+
+    private WebDriver initChromeTravis(String appURL) {
+        ChromeOptions options = new ChromeOptions();
+        options.setBinary("/usr/bin/chromium-browser");
+        //All the arguments added for chromium to work on selenium
+        options.addArguments("--no-sandbox");
+        options.addArguments("--no-default-browser-check");
+        options.addArguments("--no-first-run");
+        options.addArguments("--disable-default-apps");
+        driver = new ChromeDriver(options);
+        driver.navigate().to(appURL);
+        return driver;
     }
 
     private WebDriver initFirefixHeadless(String appURL) {
