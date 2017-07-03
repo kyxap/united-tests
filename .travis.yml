@@ -17,5 +17,5 @@ addons:
     packages:
       - google-chrome-stable
 
-script: gradle test
+script: gradle test --stacktrace
 
