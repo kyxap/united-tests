@@ -5,7 +5,7 @@
     <parameter name="browserType" value="chrome"/>
     <test name="Smoke Test" >
         <classes>
-            <class name="io.github.kyxap.tests.SearchFlightsTest" />
+            <class name="SearchFlightsTest" />
         </classes>
     </test>
 </suite>

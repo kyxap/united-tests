@@ -7,5 +7,5 @@ branches:
   only:
     - master
 
-script: gradle test
+script: gradle test --debug
 
