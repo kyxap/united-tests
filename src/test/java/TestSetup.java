@@ -39,7 +39,7 @@ public class TestSetup {
         options.addArguments("headless");
         options.addArguments("window-size=1200x600");
 
-        this.driver = new ChromeDriver(options);
+        System.out.print(">>>");this.driver = new ChromeDriver(options);
         //defConfiguration(driver);
         driver.navigate().to(appURL);
         return driver;
