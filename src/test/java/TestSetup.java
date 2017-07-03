@@ -1,15 +1,11 @@
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class TestSetup {
@@ -21,7 +17,7 @@ public class TestSetup {
         return this.driver;
     }
 
-    private void setDriver(String browserType, String appURL) throws MalformedURLException {
+    private void setDriver(String browserType, String appURL) {
         switch (browserType) {
             case "chrome":
                 driver = initChromeDriver(appURL);
@@ -30,23 +26,21 @@ public class TestSetup {
                 driver = initFirefoxDriver(appURL);
                 break;
             case "headless":
-                driver = initChromeDriverHeadLess(appURL);
+                this.driver = initChromeDriverHeadLess(appURL);
             default:
                 driver = initChromeDriver(appURL);
         }
     }
 
-    private WebDriver initChromeDriverHeadLess(String appURL) throws MalformedURLException {
-        // --disable-gpu --dump-dom
-        //System.setProperty("webdriver.chrome.driver", driverPath
-         //       + "chromedriver");
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName("chrome");
-        capabilities.setPlatform(Platform.MOUNTAIN_LION);
-        this.driver = new RemoteWebDriver(
-                new URL("http://localhost:9222/"), capabilities);
+    private WebDriver initChromeDriverHeadLess(String appURL) {
+        System.setProperty("webdriver.chrome.driver", driverPath
+                + "chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        options.addArguments("window-size=1200x600");
 
-        defConfiguration(driver);
+        this.driver = new ChromeDriver(options);
+        //defConfiguration(driver);
         driver.navigate().to(appURL);
         return driver;
     }
@@ -79,7 +73,7 @@ public class TestSetup {
             setDriver(browserType, appURL);
 
         } catch (Exception e) {
-            System.out.println("Error: " + e.getStackTrace());
+            System.out.println("Error in browser Setup: " + e.getStackTrace());
         }
     }
 

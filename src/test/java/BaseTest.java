@@ -15,7 +15,6 @@ public class BaseTest extends TestSetup {
 
     @Test
     public void verifyHomePage() {
-        System.out.println(this.driver);
         HomePage homePage = new HomePage(this.driver);
         Assert.assertTrue(homePage.verifyMainPageTitle(), "Home page title doesn't match");
     }
