@@ -13,11 +13,6 @@ dist: trusty
 
 addons:
 firefox: "44.0"
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
 
 script: gradle test --stacktrace
 
