@@ -3,7 +3,7 @@
 QA Automation Project Tests for [united.com](http://united.com/ual/en/us/) in configuration:
 Java + Selenium + TestNG + Gradle + Codebeat + Travis CI (In Progress) + Firefox/Chrome/Headless support
 
-## How - to use it
+## How to use it
 ### precondition: install gradle, chrome all other dependecies will be downloaded by gradle build
 
 1. Get source (Clone\Download\Etc)
