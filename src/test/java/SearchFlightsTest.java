@@ -34,6 +34,7 @@ public class SearchFlightsTest extends TestSetup {
 
     @Test()
     public void findShortNameOfDeparture() {
+        HomePage h = new HomePage(driver);
         Assert.assertTrue(searchFlightsPagePage.findContainsText(IATA.PDX.getFull()), "Unable to find " + IATA.PDX.getShort());
     }
 }

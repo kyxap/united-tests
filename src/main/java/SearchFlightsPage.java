@@ -10,7 +10,7 @@ public class SearchFlightsPage {
         this.driver = driver;
     }
 
-    public boolean findContainsText(String text) {
+    boolean findContainsText(String text) {
         WebElement textEl = this.driver.findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
         return textEl.isDisplayed();
     }

@@ -10,11 +10,11 @@ public class HomePage {
     private By departDate = By.cssSelector("#DepartDate");
     private By returnDate = By.cssSelector("#ReturnDate");
 
-    public HomePage(WebDriver driver) {
+    HomePage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public boolean fillFlightDates(String dep, String ret) {
+    private boolean fillFlightDates(String dep, String ret) {
         WebElement departDateElement = driver.findElement(departDate);
         WebElement returnDateElement = driver.findElement(returnDate);
         departDateElement.sendKeys(dep);
@@ -23,7 +23,7 @@ public class HomePage {
         return true;
     }
 
-    public boolean fillFromTo(String from, String to) {
+    private boolean fillFromTo(String from, String to) {
         WebElement fromInputFieldElement = driver.findElement(fromInputField);
         WebElement toInputFieldElement = driver.findElement(toInputField);
         fromInputFieldElement.sendKeys(from);
@@ -33,7 +33,7 @@ public class HomePage {
         return true;
     }
 
-    public SearchFlightsPage submitSearchFormBy (WebElement element) {
+    SearchFlightsPage submitSearchFormBy (WebElement element) {
         if (element == null) {
             WebElement fromInputFieldElement = driver.findElement(fromInputField);
             fromInputFieldElement.sendKeys(Keys.ENTER);
@@ -41,20 +41,19 @@ public class HomePage {
         return new SearchFlightsPage(this.driver);
     }
 
-    public SearchFlightsPage searchFlightsByShortName(IATA from, IATA to, String dep, String ret){
-        SearchFlightsPage searchFlightsPage = new SearchFlightsPage();
+    SearchFlightsPage searchFlightsByShortName(IATA from, IATA to, String dep, String ret){
+        SearchFlightsPage searchFlightsPage = new SearchFlightsPage(this.driver);
         if (fillFlightDates(dep, ret) && fillFromTo(from.getShort(), to.getShort())) {
             searchFlightsPage = submitSearchFormBy(null);
         } else searchFlightsPage = null;
         return searchFlightsPage;
     }
 
-    public String getPageTitle(){
-        String title = driver.getTitle();
-        return title;
+    String getPageTitle(){
+        return driver.getTitle();
     }
 
-    public boolean verifyMainPageTitle() {
+    boolean verifyMainPageTitle() {
         String expectedTitle = "United Airlines – Airline Tickets, Travel Deals and Flights";
         System.out.println(getPageTitle());
         return getPageTitle().contains(expectedTitle);
