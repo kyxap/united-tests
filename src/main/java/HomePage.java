@@ -2,21 +2,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 public class HomePage {
     private WebDriver driver;
-    private SearchFlightsPage searchFlightsPage;
     private By fromInputField = By.id("Origin");
     private By toInputField = By.id("Destination");
     private By departDate = By.cssSelector("#DepartDate");
     private By returnDate = By.cssSelector("#ReturnDate");
-    private By submitButton = By.id("flightBookingSubmit");
-    private Actions action;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
-        this.action = new Actions(this.driver);
     }
 
     public boolean fillFlightDates(String dep, String ret) {
@@ -33,7 +28,7 @@ public class HomePage {
         WebElement toInputFieldElement = driver.findElement(toInputField);
         fromInputFieldElement.sendKeys(from);
         toInputFieldElement.sendKeys(to);
-        
+
         //TODO: state verification
         return true;
     }
@@ -47,9 +42,10 @@ public class HomePage {
     }
 
     public SearchFlightsPage searchFlightsByShortName(IATA from, IATA to, String dep, String ret){
+        SearchFlightsPage searchFlightsPage = new SearchFlightsPage();
         if (fillFlightDates(dep, ret) && fillFromTo(from.getShort(), to.getShort())) {
-            this.searchFlightsPage = submitSearchFormBy(null);
-        } else this.searchFlightsPage = null;
+            searchFlightsPage = submitSearchFormBy(null);
+        } else searchFlightsPage = null;
         return searchFlightsPage;
     }
 
