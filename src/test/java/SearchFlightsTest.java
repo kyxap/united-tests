@@ -12,7 +12,6 @@ public class SearchFlightsTest extends TestSetup {
     @BeforeClass
     public void setUp() {
         driver = getDriver();
-
         this.homePage = new HomePage(driver);
         searchFlightsPagePage = homePage.searchFlightsByShortName(IATA.PDX, IATA.LAX, "Dec 15 2017", "Dec 30 2017");
     }
