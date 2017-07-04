@@ -11,5 +11,5 @@ Java + Selenium + TestNG + Gradle + Codebeat + Travis CI (In Progress) + Firefox
 3. gradle test
 4. Profit
 
-Also I have recorded small video about how it will looks:
+Also I have recorded small video about how it will look:
 [![link](https://content.screencast.com/users/kyxap/folders/Jing/media/b913f9c2-9fd9-41bb-8322-7b9048bb6046/00000021.png)](https://www.screencast.com/t/cCF3kkN3G)
