@@ -10,7 +10,6 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.+'
     testCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.49.0'
 
-
 }
 test {
     useTestNG() {
