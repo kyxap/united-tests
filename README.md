@@ -8,8 +8,9 @@ Java + Selenium + TestNG + Gradle + Codebeat + Travis CI (In Progress) + Firefox
 
 1. Get source (Clone\Download\Etc)
 2. Open project in console
-3. gradle test
-4. Profit
+3. gradle clean
+4. gradle test
+5. Profit
 
 Also I have recorded small video about how it will look:
-[![link](https://content.screencast.com/users/kyxap/folders/Jing/media/b913f9c2-9fd9-41bb-8322-7b9048bb6046/00000021.png)](https://www.screencast.com/t/cCF3kkN3G)
+[![link](https://content.screencast.com/users/kyxap/folders/Jing/media/b913f9c2-9fd9-41bb-8322-7b9048bb6046/00000021.png)](https://screencast.com/t/Gcb25sztx1Kl)
