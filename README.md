@@ -1,4 +1,4 @@
-# united-tests [![Build Status](https://travis-ci.org/kyxap/united-tests.svg?branch=master)](https://travis-ci.org/kyxap/united-tests) [![codebeat badge](https://codebeat.co/badges/5fda7f89-219e-47f6-9e94-c04f30ed66d7)](https://codebeat.co/projects/github-com-kyxap-united-tests-master)
+# united-tests [![Codeship Status for kyxap/united-tests](https://app.codeship.com/projects/745d4da0-4294-0135-0a47-1e53a873ac55/status?branch=master)](https://app.codeship.com/projects/230365) [![codebeat badge](https://codebeat.co/badges/5fda7f89-219e-47f6-9e94-c04f30ed66d7)](https://codebeat.co/projects/github-com-kyxap-united-tests-master)
 
 QA Automation Project Tests for [united.com](http://united.com/ual/en/us/) in configuration:
 Java + Selenium + TestNG + Gradle + Codebeat + Travis CI (In Progress) + Firefox/Chrome/Headless support
