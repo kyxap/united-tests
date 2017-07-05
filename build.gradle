@@ -17,4 +17,7 @@ test {
         // runlist to executed. path is relative to current folder
         suites 'testing.xml'
     }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
