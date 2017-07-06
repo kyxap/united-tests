@@ -10,7 +10,7 @@ Java + Selenium + TestNG + Gradle + Codebeat + Codeship CI + Firefox/Chrome/Head
 2. Open project in console
 3. gradle clean
 4. gradle test
-5. Profit
+5. check console for test details and logs
 
 Also I have recorded small video about how it will look:
 [![link](https://content.screencast.com/users/kyxap/folders/Jing/media/b913f9c2-9fd9-41bb-8322-7b9048bb6046/00000021.png)](https://screencast.com/t/Gcb25sztx1Kl)
