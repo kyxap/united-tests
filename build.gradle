@@ -7,7 +7,7 @@ repositories {
 dependencies {
     // add the dependencies as needed
     testCompile group: 'org.testng', name: 'testng', version:'6.8.8'
-    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.+'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '3.7+'
     testCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.49.0'
 
 }
